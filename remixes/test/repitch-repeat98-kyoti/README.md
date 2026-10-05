@@ -1,6 +1,6 @@
 # `repitch-repeat98-kyoti` -- REPITCH_REPEAT98_KYOTI
 
-One ColdFire module by Zac Kyoti and the stock effects.
+One module by Zac Kyoti and the stock effects, less SPRING REV.
 
 ## What is in it
 

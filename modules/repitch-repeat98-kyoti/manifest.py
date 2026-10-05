@@ -5,10 +5,10 @@ submodule, pinned to `a58231b`). The declaration is
 `upstream/octabam-modules/repitch-repeat98-kyoti/manifest.py`: three DRAM units
 (`patch_repitch_kyoti.s`, `rpk_glyphs.s`, `patch_repitch_reload.s`), the first
 two re-linked and compared with the author's own bytes (`reference`) every
-build. Its source paths are derived from its own directory, so it is executed
+build, and a DSP section (`rpk_dsp.asm`, reached by one hook, with two table
+blocks). Its source paths are derived from its own directory, so it is executed
 here from the source on disk, as the registry does for every manifest, and this
 file only re-exports its MODULE. Nothing inside `upstream/` is edited here.
-
 """
 
 import dataclasses
