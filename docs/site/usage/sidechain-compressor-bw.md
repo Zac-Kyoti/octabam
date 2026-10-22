@@ -1,0 +1,61 @@
+The stock COMPRESSOR with a side-chain and a base-width key filter (Sidechain
+Compressor B-W): any of tracks 1-8 can drive its detector, so one track's level
+ducks another. Page 2 adds a switch to listen to the key, the key itself, its
+gain, and a high-pass and low-pass pair that sets the band the detector hears.
+
+The base-width filter isolates the key better than SIDECHAIN_COMPRESSOR's
+one-knob filter: a kick's fundamental, for example, with the high-pass cutting
+the sub-sonic rumble below it. That reduces distortion and keeps the
+compression smooth at short attack and release settings.
+
+## Access
+
+An effect on a track: select the track, press FX2, and pick COMPRESSOR from
+the chooser; the setup page shows the new knobs. Not in an official remix;
+build the test remix `sidechain-compressor-bw` (or `kyoti-mute-sidechain-bw`).
+It uses SPRING REV's words, so SPRING REV is off the chooser in those images.
+It does not coexist with BusDelay or BusVerb, and it is one or the other with
+SIDECHAIN_COMPRESSOR (the same effect): the build refuses either pair.
+
+![FX2 SETUP with COMPRESSOR selected, showing RMS, MON, KEY, KGN, KBAS and KWID.](../../img/sidechain-compressor-bw/setup.png)
+
+*FX2 SETUP with COMPRESSOR selected, showing RMS, MON, KEY, KGN, KBAS and KWID.*
+
+## Operation
+
+- KEY chooses what drives the detector: OFF (the track's own signal, as
+  stock) or T1-T8. Choosing the compressor's own track keys it from its own
+  signal through the filter.
+- KBAS is the filter's base: a high-pass at OFF or 20 Hz to 19.6 kHz. Its
+  readout is in Hz (`1.2k` is 1.2 kHz).
+- KWID is the filter's width: a low-pass this many octaves above KBAS, 0.5 to
+  9.9, or OFF. Its readout is in octaves. With KBAS at OFF it counts up from
+  20 Hz, so it works as a plain low-pass.
+- The two cannot cross: raising KBAS moves the whole band up.
+- For a kick: KBAS about 30-40 Hz, KWID about 1.2-1.5.
+- KGN is the key's gain, about -24 to +24 dB.
+- MON lets you hear the processed key in place of the track. Switching it,
+  or changing KEY while it is on, fades instead of clicking.
+- A COMPRESSOR saved on stock firmware comes up with MON OFF, KEY OFF, KGN
+  centred and both filters OFF. One saved with SIDECHAIN_COMPRESSOR keeps its
+  KEY; set its other page-2 knobs again.
+- The key works across the two DSP cores in both directions.
+- Beside MUTE_MODES a muted key track keeps feeding the key, as stock mute
+  does (MUTE_MODES' SC_KEY build).
+
+## Parameters
+
+| Page | Knob | What it does |
+|---|---|---|
+| 1 | stock COMPRESSOR | as stock |
+| 2 | RMS | stock's |
+| 2 | MON | hear the processed key |
+| 2 | KEY | OFF or T1-T8 |
+| 2 | KGN | key gain, about -24 to +24 dB |
+| 2 | KBAS | key high-pass, 18 dB/oct: OFF, 20 Hz to 19.6 kHz (Hz) |
+| 2 | KWID | key low-pass, 12 dB/oct, this many octaves above KBAS: 0.5 to 9.9, OFF |
+
+Tested on the author's MKI on 22 Oct 2026 in the author's standalone image:
+page 2 and its readouts, a kick's fundamental keyed at short attack and
+release, MON and KEY declick. The author's KYOTI V1.6 image, which carries it,
+ran on the unit the same day. This octabam form has not been flashed.

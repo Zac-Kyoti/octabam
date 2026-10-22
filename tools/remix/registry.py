@@ -86,10 +86,22 @@ def modules() -> dict[str, object]:
                              f"{seen_dirs[m.key]} and {d.name}")
         if m.menu is not None:
             if m.menu.fx2_id in seen_ids:
-                raise SystemExit(
-                    f"two modules claim FX2 id 0x{m.menu.fx2_id:02x}: "
-                    f"{seen_ids[m.menu.fx2_id]} and {d.name}")
-            seen_ids[m.menu.fx2_id] = d.name
+                # Two versions of ONE stock effect may share its id: both declare
+                # replaces= that effect, and one names the other in `conflicts`, so
+                # the ledger never lets them into one remix (a project's saved id
+                # then means "this effect", in whichever version the remix carries).
+                other = next(x for x in found.values()
+                             if x.menu is not None and x.menu.fx2_id == m.menu.fx2_id)
+                if not (m.menu.replaces and m.menu.replaces == other.menu.replaces
+                        and (other.key in {k for k, _w in m.conflicts}
+                             or m.key in {k for k, _w in other.conflicts})):
+                    raise SystemExit(
+                        f"two modules claim FX2 id 0x{m.menu.fx2_id:02x}: "
+                        f"{seen_ids[m.menu.fx2_id]} and {d.name}"
+                        + (" (two versions of one stock effect may, when both declare "
+                           "replaces= it and one declares the other a conflict)"
+                           if m.menu.replaces or other.menu.replaces else ""))
+            seen_ids.setdefault(m.menu.fx2_id, d.name)
         seen_dirs[m.key] = d.name
         found[m.key] = m
     from remix import stock

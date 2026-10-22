@@ -56,7 +56,7 @@ GH = "https://github.com/sambanks/octabam"
 
 _SMALL = {"a", "an", "and", "as", "at", "but", "by", "for", "from", "in", "of", "on", "or", "the", "to", "with", "over"}
 _UPPER = {"os", "din", "dj", "eq", "bd", "usb", "midi", "cc", "cpu", "dsp", "cf", "lfo", "ata", "txtr", "amf",
-          "fx1", "fx2", "lofi2", "brain", "ui", "id", "sd"}
+          "fx1", "fx2", "lofi2", "brain", "ui", "id", "sd", "bw"}
 
 
 def title_case(text: str) -> str:

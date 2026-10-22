@@ -30,6 +30,7 @@ Each carries one module, or one combination, for that module's gates: `make chec
 | [`kyoti-fixes`](kyoti-fixes/README.md) | stock effects with QUANTIZE_LIVE_REC_TOGGLE, ERASE_EMPTY_TRIGLESS_LOCKS and BATCH_BUGFIXES together. | `make check` |
 | [`kyoti-mute-jump`](kyoti-mute-jump/README.md) | stock effects with MUTE_MODES and DIRECT_JUMP_KYOTI together. | `make check` |
 | [`kyoti-mute-sidechain`](kyoti-mute-sidechain/README.md) | stock effects with MUTE_MODES and SIDECHAIN_COMPRESSOR together: a muted KEY track keeps feeding the compressor (SC_KEY). | `make check` |
+| [`kyoti-mute-sidechain-bw`](kyoti-mute-sidechain-bw/README.md) | stock effects with MUTE_MODES and SIDECHAIN_COMPRESSOR_BW together: a muted KEY track keeps feeding the compressor (SC_KEY). | `make check` |
 | [`lofi-amf-fix`](lofi-amf-fix/README.md) | Reference minimal build: the LO-FI AMF mpysu->mpyuu fix, alone. | `make check` |
 | [`lofi2`](lofi2/README.md) | LOFI2 beside the stock effects (all but PLATE REV and SPRING REV, whose words it takes). | `make check` |
 | [`midi-loopback`](midi-loopback/README.md) | Stock effects plus the Part-scoped per-track MIDI loopback routing. | on hardware |
@@ -54,6 +55,7 @@ Each carries one module, or one combination, for that module's gates: `make chec
 | [`scenes-midisc`](scenes-midisc/README.md) | MIDI SCENES + KITS + page-2 scene locks (SCENES P2) + page-2 parameter locks (PLOCKS P2), stock effects. | port-gated: verify_scenes_p2 and verify_plocks_p2 under the port |
 | [`shatter`](shatter/README.md) | SHATTER beside the stock effects (all but PLATE REV, whose words it takes). | on hardware: Ilia's MKII, BUILD S6 (SHATTER S6.RMX), 21 Oct 2026: every SHATTER knob exercised; verify_shatter. Solo gate remix. |
 | [`sidechain-compressor`](sidechain-compressor/README.md) | stock effects with SIDECHAIN_COMPRESSOR in COMPRESSOR's row: KEY, KFLT, KGN and MON on page 2. | `make check` |
+| [`sidechain-compressor-bw`](sidechain-compressor-bw/README.md) | stock effects with SIDECHAIN_COMPRESSOR_BW (Sidechain Compressor B-W) in COMPRESSOR's row: MON, KEY, KGN, KBAS and KWID on page 2. | `make check` |
 | [`sos-capture`](sos-capture/README.md) | recorder fixes + USB (TRACKS out, AB in) (stock effects minus SPATIALIZER). | port-gated: `make check` under the port; not on hardware in this form |
 | [`stations-fx2`](stations-fx2/README.md) | SPECTRUM, CHARACTER and MODULATION on FX1 and FX2, beside the stock DELAY. | port-gated: `verify_stations_fx2` (dsp_host); not on a unit |
 | [`stems`](stems/README.md) | STEM REC on the stock effects: multitrack recording to the card, each track, MAIN, CUE and the inputs as separate WAV files. | on hardware: Yves's MKII, 6 Oct 2026 (STEMS3) |

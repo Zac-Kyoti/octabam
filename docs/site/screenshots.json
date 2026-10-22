@@ -921,5 +921,21 @@
       "source": "emulator panel UART",
       "firmware_sha256": "47560f6033490386b25b9ff3feac5502b3de03dc70f9faaec7d17a463f249a99"
     }
+  },
+  "sidechain-compressor-bw": {
+    "setup": {
+      "image": "sidechain-compressor-bw/setup.png",
+      "caption": "SIDECHAIN_COMPRESSOR_BW: effect selection and setup parameters.",
+      "remix": "sidechain-compressor-bw",
+      "source": "emulator panel UART",
+      "firmware_sha256": "f2b4a7361aefbfd046a59e572977c1f800ed618b2d0410b498f68e12fffe3736"
+    },
+    "main": {
+      "image": "sidechain-compressor-bw/main.png",
+      "caption": "SIDECHAIN_COMPRESSOR_BW: main parameter page.",
+      "remix": "sidechain-compressor-bw",
+      "source": "emulator panel UART",
+      "firmware_sha256": "f2b4a7361aefbfd046a59e572977c1f800ed618b2d0410b498f68e12fffe3736"
+    }
   }
 }

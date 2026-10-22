@@ -50,3 +50,6 @@
 [submodule "modules/varispeed/upstream"]
 	path = modules/varispeed/upstream
 	url = https://github.com/Zac-Kyoti/octatrack-kyoti-fw
+[submodule "modules/sidechain-compressor-bw/upstream"]
+	path = modules/sidechain-compressor-bw/upstream
+	url = https://github.com/Zac-Kyoti/octatrack-kyoti-fw

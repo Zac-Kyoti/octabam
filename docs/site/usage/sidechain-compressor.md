@@ -2,6 +2,11 @@ The stock COMPRESSOR with a side-chain: any of tracks 1-8 can drive its
 detector, so one track's level ducks another. Page 2 adds the key and its
 filter and gain, and a switch to listen to the key.
 
+This is the light version: its DSP section is smaller, but its one-knob key
+filter does not isolate the key as well as the base-width filter of
+SIDECHAIN_COMPRESSOR_BW (Sidechain Compressor B-W). The two are the same
+effect: a remix carries one or the other.
+
 ## Access
 
 An effect on a track: select the track, press FX2, and pick

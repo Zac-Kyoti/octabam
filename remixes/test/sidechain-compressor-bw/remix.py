@@ -1,0 +1,16 @@
+"""stock effects with SIDECHAIN_COMPRESSOR_BW (Sidechain Compressor B-W) in COMPRESSOR's row: MON, KEY,
+KGN, KBAS and KWID on page 2; SPRING REV gives up its words for the DSP section, as in the standalone
+build."""
+
+from remix.schema import Proof, Remix
+
+REMIX = Remix(
+    name="sidechain-compressor-bw",
+    family="mods", proof=Proof.CHECK, proof_note="",
+    doc="stock effects with SIDECHAIN_COMPRESSOR_BW (Sidechain Compressor B-W) in COMPRESSOR's row: MON, KEY, KGN, KBAS and KWID on page 2.",
+    modules=(
+             "FILTER", "EQUALIZER", "DJ EQ", "PHASER", "FLANGER",
+             "CHORUS", "SPATIALIZER", "COMB FILTER", "SIDECHAIN_COMPRESSOR_BW", "LO-FI",
+             "DELAY", "PLATE REV", "DARK REV"),
+    fallback="NONE",
+)
